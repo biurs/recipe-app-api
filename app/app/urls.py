@@ -24,9 +24,9 @@ from django.conf import settings
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('api/schema', SpectacularAPIView.as_view(), name='api-schema'),
+    path('api/schema/', SpectacularAPIView.as_view(), name='api-schema'),
     path(
-        'api/docs',
+        'api/docs/',
         SpectacularSwaggerView.as_view(url_name='api-schema'),
         name='api-docs',
     ),
@@ -37,5 +37,5 @@ urlpatterns = [
 if settings.DEBUG:
     urlpatterns += static(
         settings.MEDIA_URL,
-        document_root=settings.MEDIA_ROOT
+        document_root=settings.MEDIA_ROOT,
     )
